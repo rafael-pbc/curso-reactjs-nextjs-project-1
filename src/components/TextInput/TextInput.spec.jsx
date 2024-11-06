@@ -15,7 +15,7 @@ describe('<TextInput/>', () => {
 
   it('should call handleChange function on each key pressed', async () => {
     const fn = jest.fn();
-    render(<TextInput handleChange={fn} />);
+    render(<TextInput handleChange={fn} searchValue={'o valor'} />);
 
     const input = screen.getByPlaceholderText(/type your search/i);
 
@@ -29,7 +29,7 @@ describe('<TextInput/>', () => {
 
   it('should match snapshot', async () => {
     const fn = jest.fn();
-    const { container } = render(<TextInput handleChange={fn} />);
+    const { container } = render(<TextInput handleChange={fn} searchValue={''} />);
     // eslint-disable-next-line testing-library/no-node-access
     expect(container.firstChild).toMatchSnapshot();
   });
