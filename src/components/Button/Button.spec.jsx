@@ -1,12 +1,14 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 //import userEvent from '@testing-library/user-event'
-import { jest } from '@jest/globals';
+import { jest, expect } from '@jest/globals';
 import { Button } from '.'
 
 describe('<Button/>', () => {
   it('should render the button with the text', () => {
     const fn = jest.fn();
-    render(<Button text="Load more" onClick={fn} />);
+    render(<Button text="Load more" disabled={false} onClick={fn} />);
+
+    expect.assertions(1);
 
     const button = screen.getByRole('button', { name: /load more/i })
     expect(button).toBeInTheDocument();

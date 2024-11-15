@@ -27,6 +27,11 @@ export default [
         version: "detect",
       },
     },
+    env: {
+      jest: true, // Adiciona o ambiente Jest
+      node: true, // Se necessário, adicione outros ambientes, como node
+      browser: true, // Se você estiver usando no navegador
+    },
     plugins: {
       jest,
       "testing-library": testingLibrary,
